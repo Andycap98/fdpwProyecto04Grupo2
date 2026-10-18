@@ -13,11 +13,11 @@ function Dado() {
   return (
     <div className="contenedor-dado">
       <div
-  className="cara-dado"
-  style={{ fontSize: "100px", marginBottom: "30px" }}
->
-  {caras[valor - 1]}
-</div>
+        className="cara-dado"
+        style={{ fontSize: "100px", marginBottom: "30px" }}
+      >
+        {caras[valor - 1]}
+      </div>
 
       <button onClick={lanzarDado}>
         Lanzar Dado
