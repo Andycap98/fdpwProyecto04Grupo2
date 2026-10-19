@@ -1,4 +1,4 @@
-/*
+
 import Dado from "./components/Dado.jsx";
 
 function App() {
@@ -11,5 +11,5 @@ function App() {
 }
 
 export default App;
-*/
+
 
