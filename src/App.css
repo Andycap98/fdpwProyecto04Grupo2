@@ -1,6 +1,126 @@
-.contenedor-dado {
+
+/* Estructura general de la aplicación */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.pagina-juego {
+  min-height: 100vh;
+  padding: 50px 20px;
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #573082 0%,
+      #26133f 50%,
+      #10091d 100%
+    );
+}
+
+/* Tarjeta principal */
+
+.tarjeta-juego {
+  width: 100%;
+  max-width: 760px;
+  padding: 45px 35px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    #30194c,
+    #1b102d
+  );
+
+  border: 2px solid #d7ab46;
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(215, 171, 70, 0.15);
+}
+
+/* Encabezado */
+
+.encabezado-juego {
+  margin-bottom: 35px;
+}
+
+.etiqueta-juego {
+  display: inline-block;
+  padding: 8px 18px;
+
+  color: #f7d77d;
+  border: 1px solid #d7ab46;
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.encabezado-juego h1 {
+  margin: 22px 0 12px;
+
+  color: #ffe49a;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+
+  text-shadow: 0 0 20px rgba(255, 228, 154, 0.3);
+}
+
+.encabezado-juego p {
+  color: #d9c9e9;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Zona del dado */
+
+.seccion-dado {
+  padding: 25px 15px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(215, 171, 70, 0.25);
+  border-radius: 22px;
+}
+
+.seccion-dado h2 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* Pie de página */
+
+.pie-juego {
+  margin-top: 35px;
+  color: #bca9d0;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+  .pagina-juego {
+    padding: 20px 12px;
+  }
+
+  .tarjeta-juego {
+    padding: 30px 18px;
+  }
+
+  .seccion-dado {
+    padding: 20px 8px;
+  }
 }
