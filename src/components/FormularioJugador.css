@@ -1,0 +1,87 @@
+
+.seccion-jugador {
+  margin-bottom: 30px;
+  padding: 25px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(215, 171, 70, 0.3);
+  border-radius: 20px;
+}
+
+.seccion-jugador h2 {
+  color: #ffe49a;
+  margin-bottom: 25px;
+}
+
+.seccion-jugador form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.campo-formulario label {
+  color: #f4e5ff;
+  font-weight: bold;
+}
+
+.campo-formulario input {
+  width: 100%;
+  padding: 12px 15px;
+
+  background: #180d2a;
+  color: #ffffff;
+
+  border: 1px solid #9772b4;
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+.campo-formulario input:focus {
+  outline: none;
+  border-color: #f5d77b;
+  box-shadow: 0 0 10px rgba(245, 215, 123, 0.25);
+}
+
+.error-campo {
+  color: #ff9292;
+  font-size: 13px;
+}
+
+.seccion-jugador button {
+  padding: 13px 20px;
+  margin-top: 10px;
+
+  background: linear-gradient(135deg, #ffe28a, #c99624);
+  color: #241239;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seccion-jugador button:hover {
+  filter: brightness(1.1);
+}
+
+.datos-jugador {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #d7ab46;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.datos-jugador h2 {
+  color: #ffe49a;
+}

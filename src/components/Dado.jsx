@@ -2,13 +2,16 @@
 import { useState } from "react";
 import "./Dado.css";
 
-function Dado() {
+function Dado({ onResultado}) {
   const [valor, setValor] = useState(1);
   const [lanzamientos, setLanzamientos] = useState(0);
 
   const lanzarDado = () => {
     const resultado = Math.floor(Math.random() * 6) + 1;
     setValor(resultado);
+    if (onResultado) {
+  onResultado(resultado);
+}
     setLanzamientos((anterior) => anterior + 1);
   };
 
