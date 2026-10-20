@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./FormularioJugador.css";
 
@@ -5,38 +6,56 @@ function FormularioJugador({ onGuardarJugador }) {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [edad, setEdad] = useState("");
-  const [errores, setErrores] = useState({}); // Guarda los mensajes de error, un mensaje por campo.
+  const [errores, setErrores] = useState({});
 
-  const validar = () => {   // Revisa los tres campos y devuelve un objeto con los errores encontrados.
+  const limpiarFormulario = () => {
+    setNombre("");
+    setApellido("");
+    setEdad("");
+    setErrores({});
+  };
+
+  const validar = () => {
     const nuevosErrores = {};
+
     if (nombre.trim() === "") {
       nuevosErrores.nombre = "El nombre es obligatorio";
     }
+
     if (apellido.trim() === "") {
       nuevosErrores.apellido = "El apellido es obligatorio";
     }
-    const edadNumero = Number(edad);    // Revisa los tres campos y devuelve un objeto con los errores encontrados.
-    if (edad === "") {  // El campo está vacío
+
+    const edadNumero = Number(edad);
+
+    if (edad === "") {
       nuevosErrores.edad = "La edad es obligatoria";
-    } else if (!Number.isInteger(edadNumero) || edadNumero <= 0) {  // No es un entero o es 0 o negativo
-      nuevosErrores.edad = "Ingresá una edad válida (número entero mayor a 0)";
+    } else if (!Number.isInteger(edadNumero) || edadNumero <= 0) {
+      nuevosErrores.edad =
+        "Ingresá una edad válida (número entero mayor a 0)";
     }
+
     return nuevosErrores;
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  const nuevosErrores = validar();
-  setErrores(nuevosErrores);
-  if (Object.keys(nuevosErrores).length > 0) {
-    return;
-  }
-  onGuardarJugador({
-    nombre: nombre.trim(),
-    apellido: apellido.trim(),
-    edad: Number(edad),
-  });
-};
+    e.preventDefault();
+
+    const nuevosErrores = validar();
+    setErrores(nuevosErrores);
+
+    if (Object.keys(nuevosErrores).length > 0) {
+      return;
+    }
+
+    onGuardarJugador({
+      nombre: nombre.trim(),
+      apellido: apellido.trim(),
+      edad: Number(edad),
+    });
+
+    limpiarFormulario();
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -74,11 +93,21 @@ function FormularioJugador({ onGuardarJugador }) {
           value={edad}
           onChange={(e) => setEdad(e.target.value)}
         />
-        {errores.edad && <span className="error-campo">{errores.edad}</span>}
+        {errores.edad && (
+          <span className="error-campo">{errores.edad}</span>
+        )}
       </div>
-      <button type="submit">Guardar jugador</button>
+
+      <button type="submit">
+        Guardar jugador
+      </button>
+
+      <button type="button" onClick={limpiarFormulario}>
+        Limpiar formulario
+      </button>
     </form>
   );
 }
 
 export default FormularioJugador;
+
