@@ -4,6 +4,7 @@ import "./App.css";
 
 import Dado from "./components/Dado.jsx";
 import FormularioJugador from "./components/FormularioJugador.jsx";
+import MensajeResultado from "./components/MensajeResultado.jsx";
 
 function App() {
   const [jugador, setJugador] = useState(null);
@@ -42,12 +43,18 @@ function App() {
           <h2>¿Qué número te tocará?</h2>
 
           
-<Dado onResultado={setNumero} />
+<Dado
+  onResultado={(resultado) => {
+    console.log("App recibió:", resultado);
+    setNumero(resultado);
+  }}
+/>
 
 {numero !== null && (
-  <p className="resultado-numero">
-    Resultado del lanzamiento: {numero}
-  </p>
+  <div className="resultado-numero" key={numero}>
+    <p>Resultado del lanzamiento: {numero}</p>
+    <MensajeResultado numero={numero} />
+  </div>
 )}
 
         </section>

@@ -8,6 +8,8 @@ function Dado({ onResultado}) {
 
   const lanzarDado = () => {
     const resultado = Math.floor(Math.random() * 6) + 1;
+
+   console.log("Número obtenido:", resultado);
     setValor(resultado);
     if (onResultado) {
   onResultado(resultado);
