@@ -91,3 +91,8 @@ Nosotros como equipo usamos la IA para guiarnos en la resolución del proyecto e
 ## Estado del proyecto
 
 Proyecto en desarrollo. Se encuentran implementados el lanzamiento del dado, el registro del jugador y el diseño de la interfaz. Está pendiente la integración de los mensajes condicionales.
+19-10-2026 ## Estado del proyecto
+
+Proyecto finalizado. Se implementaron e integraron los componentes `Dado.jsx`, `FormularioJugador.jsx` y `MensajeResultado.jsx`.
+
+La aplicación permite registrar jugadores, validar y limpiar los campos del formulario, lanzar un dado de seis caras y visualizar mensajes condicionales según el resultado obtenido.
