@@ -7,6 +7,7 @@ import FormularioJugador from "./components/FormularioJugador.jsx";
 
 function App() {
   const [jugador, setJugador] = useState(null);
+  const [numero, setNumero] = useState(null);
 
   const guardarJugador = (datos) => {
     setJugador(datos);
@@ -39,7 +40,16 @@ function App() {
 
         <section className="seccion-dado">
           <h2>¿Qué número te tocará?</h2>
-          <Dado />
+
+          
+<Dado onResultado={setNumero} />
+
+{numero !== null && (
+  <p className="resultado-numero">
+    Resultado del lanzamiento: {numero}
+  </p>
+)}
+
         </section>
 
         {jugador && (
